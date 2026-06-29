@@ -11,7 +11,8 @@ export default function AppTabs() {
     <NativeTabs
       backgroundColor={colors.background}
       indicatorColor={colors.backgroundElement}
-      labelStyle={{ selected: { color: colors.primary } }}>
+      labelStyle={{ selected: { color: colors.primary } }}
+      tabBarRespectsIMEInsets={true}>
       <NativeTabs.Trigger name="index">
         <NativeTabs.Trigger.Label>Lista</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon

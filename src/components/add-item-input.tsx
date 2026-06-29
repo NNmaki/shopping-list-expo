@@ -23,7 +23,7 @@ export function AddItemInput({ onAdd }: AddItemInputProps) {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
     >
       <View style={[styles.container, { backgroundColor: theme.background, borderTopColor: theme.border }]}>

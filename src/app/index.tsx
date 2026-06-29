@@ -36,7 +36,7 @@ export default function ShoppingListScreen() {
             <View style={styles.titleContainer}>
               <ShoppingBasket size={32} color={theme.primary} />
               <ThemedText type="title" style={styles.title}>
-                NMakien Ostoslista
+                NNMaki Ostoslista
               </ThemedText>
             </View>
             {items.length > 0 && (
@@ -61,6 +61,7 @@ export default function ShoppingListScreen() {
           <FlatList
             data={items}
             keyExtractor={(item) => item.id.toString()}
+            keyboardShouldPersistTaps="handled"
             renderItem={({ item }) => (
               <ShoppingItem
                 name={item.name}
