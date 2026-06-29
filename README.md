@@ -1,56 +1,123 @@
-# Welcome to your Expo app 👋
+# 🛒 Nnmaki Shopping List
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<p align="center">
+  <img src="assets/icon.png" alt="Nnmaki Shopping List" width="120" style="border-radius:24px;" />
+</p>
 
-## Get started
+<p align="center">
+  Yksinkertainen ja selkeä ostoslistasovellus Android-laitteille.<br/>
+  Rakennettu React Native / Expo -kirjastolla.
+</p>
 
-1. Install dependencies
+<p align="center">
+  <a href="https://nnmaki.com/shoppinglist">
+    <img src="https://img.shields.io/badge/⬇️%20Lataa%20APK-nnmaki.com-4a8c3f?style=for-the-badge" alt="Lataa APK" />
+  </a>
+</p>
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 📱 Lataa sovellus
 
-   ```bash
-   npx expo start
-   ```
+Voit ladata sovelluksen APK-tiedostona suoraan osoitteesta:
 
-In the output, you'll find options to open the app in a
+**👉 [nnmaki.com/shoppinglist](https://nnmaki.com/shoppinglist)**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+> Sovellus vaatii Android 6.0:n tai uudemman.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## ✨ Ominaisuudet
 
-When you're ready, run:
+- Lisää ostoksia nopeasti listalle
+- Merkitse tuotteet tehdyksi yhdellä napauksella
+- Toimii ilman internet-yhteyttä
+- Selkeä ja kevyt käyttöliittymä
+
+---
+
+## 🔧 Mikä on Expo?
+
+[Expo](https://expo.dev) on avoimen lähdekoodin alusta React Native -sovellusten kehittämiseen. Sen avulla voi rakentaa iOS- ja Android-sovelluksia JavaScriptillä ja Reactilla ilman, että tarvitsee erikseen asentaa Xcodea tai Android Studiota kehitysvaiheessa.
+
+Expo tarjoaa muun muassa:
+
+- **Expo Go** – sovellus, jolla voi testata kehitysversiota suoraan puhelimella
+- **EAS Build (Expo Application Services)** – pilvipalvelu, joka kääntää sovelluksen natiiviksi APK- tai IPA-tiedostoksi
+- Valmiit kirjastot kameran, ilmoitusten, tiedostojärjestelmän ja muiden natiiviominaisuuksien käyttöön
+
+Tämä projekti on buildattu EAS Buildin avulla natiiviksi Android APK -tiedostoksi.
+
+---
+
+## 🚀 Kehitysympäristön käynnistys
 
 ```bash
-npm run reset-project
+# Asenna riippuvuudet
+npm install
+
+# Käynnistä Expo kehitysserveri
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Skannaa QR-koodi [Expo Go](https://expo.dev/go) -sovelluksella tai käynnistä emulaattorissa.
 
-### Other setup steps
+### APK:n buildaus EAS:lla
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```bash
+# Asenna EAS CLI
+npm install -g eas-cli
 
-## Learn more
+# Kirjaudu sisään
+eas login
 
-To learn more about developing your project with Expo, look at the following resources:
+# Buildaa APK
+eas build -p android --profile preview
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📲 Asennusohjeet – ulkoinen APK Androidille
 
-Join our community of developers creating universal apps.
+Koska sovellus ei ole Google Play -kaupassa, asennus vaatii muutaman lisäaskeleen.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Vaihe 1 – Poista Google Play Protect väliaikaisesti käytöstä
+
+1. Avaa **Google Play -kauppa**
+2. Napauta oikeasta yläkulmasta **profiilikuvaasi**
+3. Valitse **Play Protect**
+4. Napauta oikeasta yläkulmasta **rataskuvaketta ⚙**
+5. Kytke **"Tarkista sovellukset Play Protectilla"** pois päältä
+6. Vahvista napauttamalla **Poista käytöstä**
+
+> ⚠️ Muista kytkeä Play Protect takaisin päälle asennuksen jälkeen!
+
+### Vaihe 2 – Anna asennuslupa oikealle sovellukselle
+
+Lupa täytyy myöntää **sille sovellukselle, jonka kautta asennat** – ei pelkästään yleisistä asetuksista.
+
+- **Selaimella (esim. Chrome):** Latauksen jälkeen napauta *Asenna* → Android pyytää lupaa → valitse *Asetukset* → kytke **"Salli tästä lähteestä"** päälle Chromen kohdalta.
+- **Tiedostonhallinnalla (esim. Files by Google):** Napauta APK-tiedostoa → myönnä lupa **tiedostonhallintasovellukselle** erikseen.
+
+### Vaihe 3 – Lataa ja asenna
+
+1. Siirry osoitteeseen **[nnmaki.com/shoppinglist](https://nnmaki.com/shoppinglist)**
+2. Napauta *Lataa APK Androidille* -painiketta
+3. Avaa ladattu tiedosto ja seuraa asennusvelhon ohjeita
+4. Sovellus ilmestyy kotiruudulle tai sovellusvalikkoosi
+
+---
+
+## 🛠️ Teknologiat
+
+| Teknologia | Kuvaus |
+|---|---|
+| React Native | Natiivisovelluksen pohja |
+| Expo SDK | Kehitysalusta ja työkalut |
+| EAS Build | APK:n kääntäminen pilvessä |
+
+---
+
+## 📄 Lisenssi
+
+MIT
