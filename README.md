@@ -1,7 +1,7 @@
 # 🛒 Nnmaki Shopping List
 
 <p align="center">
-  <img src="assets/icon.png" alt="Nnmaki Shopping List" width="120" style="border-radius:24px;" />
+  <img src="assets/images/icon.png" alt="Nnmaki Shopping List" width="120" style="border-radius:24px;" />
 </p>
 
 <p align="center">
